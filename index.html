@@ -798,7 +798,9 @@
 
           <h3 class="h3 form-title">Contact Form</h3>
 
-          <form action="#" class="form" data-form>
+          <form action="https://api.web3forms.com/submit" method="POST" class="form" data-form>
+            <input type="hidden" name="access_key" value="f8239a3e-63d9-45a3-bed3-7ee9b5539fff">
+            <input type="hidden" name="subject" value="New message from portfolio">
 
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
@@ -813,6 +815,7 @@
               <span>Send Message</span>
             </button>
 
+            <p class="form-status" data-form-status role="status" aria-live="polite"></p>
           </form>
 
         </section>

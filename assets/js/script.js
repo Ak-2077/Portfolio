@@ -119,6 +119,7 @@ for (let i = 0; i < filterBtn.length; i++) {
 const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
+const formStatus = document.querySelector("[data-form-status]");
 
 // add event to all form input field
 for (let i = 0; i < formInputs.length; i++) {
@@ -131,6 +132,45 @@ for (let i = 0; i < formInputs.length; i++) {
       formBtn.setAttribute("disabled", "");
     }
 
+  });
+}
+
+if (form) {
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    if (!formBtn || !formStatus) {
+      form.submit();
+      return;
+    }
+
+    formBtn.setAttribute("disabled", "");
+    formStatus.textContent = "Sending...";
+    formStatus.classList.remove("success", "error");
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: { Accept: "application/json" }
+      });
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        form.reset();
+        formBtn.setAttribute("disabled", "");
+        formStatus.textContent = "Message sent successfully!";
+        formStatus.classList.add("success");
+      } else {
+        throw new Error(data.message || "Form submission failed.");
+      }
+    } catch (error) {
+      formStatus.textContent = "Something went wrong. Please try again.";
+      formStatus.classList.add("error");
+      formBtn.removeAttribute("disabled");
+    }
   });
 }
 
