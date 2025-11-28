@@ -1325,13 +1325,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 .form-status.error { color: var(--bittersweet-shimmer); }
 
 .hire-me {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  margin: 0;
-  z-index: 99;
-  width: auto;
-  max-width: calc(100% - 48px);
+  margin-top: 40px;
 }
 
 .hire-me-btn {
@@ -1339,8 +1333,8 @@ textarea.form-input::-webkit-resizer { display: none; }
   justify-content: center;
   align-items: center;
   gap: 10px;
-  width: auto;
-  padding: 15px 28px;
+  width: 100%;
+  padding: 15px 24px;
   border-radius: 14px;
   background: var(--border-gradient-onyx);
   color: var(--orange-yellow-crayola);
@@ -1350,7 +1344,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   box-shadow: var(--shadow-3);
   position: relative;
   z-index: 1;
-  white-space: nowrap;
   transition: var(--transition-1);
 }
 
@@ -1369,18 +1362,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 .hire-me-btn:hover { background: var(--bg-gradient-yellow-1); }
 
 .hire-me-btn:hover::before { background: var(--bg-gradient-yellow-2); }
-
-@media (max-width: 600px) {
-  .hire-me {
-    left: 16px;
-    right: 16px;
-    bottom: 16px;
-  }
-
-  .hire-me-btn {
-    width: 100%;
-  }
-}
 
 
 
