@@ -1324,7 +1324,44 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 .form-status.error { color: var(--bittersweet-shimmer); }
 
+.hire-me {
+  margin-top: 40px;
+}
 
+.hire-me-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 15px 24px;
+  border-radius: 14px;
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola);
+  font-size: var(--fs-5);
+  text-transform: uppercase;
+  font-weight: var(--fw-500);
+  box-shadow: var(--shadow-3);
+  position: relative;
+  z-index: 1;
+  transition: var(--transition-1);
+}
+
+.hire-me-btn::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: var(--bg-gradient-jet);
+  z-index: -1;
+  transition: var(--transition-1);
+}
+
+.hire-me-btn ion-icon { font-size: 20px; }
+
+.hire-me-btn:hover { background: var(--bg-gradient-yellow-1); }
+
+.hire-me-btn:hover::before { background: var(--bg-gradient-yellow-2); }
 
 
 
