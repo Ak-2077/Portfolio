@@ -51,17 +51,17 @@ const syncFilterBtn = function (selectedValue) {
 // filter variables
 const filterItems = document.querySelectorAll("[data-filter-item]");
 
+// a project can belong to several categories: data-category="app development, machine learning"
 const filterFunc = function (selectedValue) {
 
   for (let i = 0; i < filterItems.length; i++) {
 
-    if (selectedValue === "all") {
-      filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
-      filterItems[i].classList.add("active");
-    } else {
-      filterItems[i].classList.remove("active");
-    }
+    const categories = (filterItems[i].dataset.category || "")
+      .split(",")
+      .map(function (c) { return c.trim().toLowerCase(); });
+
+    const isMatch = selectedValue === "all" || categories.includes(selectedValue);
+    filterItems[i].classList.toggle("active", isMatch);
 
   }
 

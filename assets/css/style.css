@@ -1221,27 +1221,30 @@ main {
   padding-inline: 6px;
 }
 
+/* sits in normal flow above the title so it can never collide with a long title */
 .project-badge {
-  position: absolute;
-  top: -1px;
-  right: 6px;
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 5px;
+  margin-bottom: 9px;
   background: var(--text-gradient-yellow);
   color: var(--smoky-black);
   font-size: var(--fs-8);
   font-weight: var(--fw-600);
   letter-spacing: 0.3px;
   text-transform: uppercase;
-  padding: 4px 10px;
+  padding: 4px 11px;
   border-radius: 999px;
 }
+
+.project-badge ion-icon { font-size: 12px; }
 
 .project-title {
   color: var(--white-2);
   font-size: var(--fs-4);
   font-weight: var(--fw-500);
-  text-transform: capitalize;
   line-height: 1.3;
-  padding-right: 80px;
 }
 
 .project-category {
@@ -1259,6 +1262,11 @@ main {
   font-weight: var(--fw-300);
   line-height: 1.6;
   margin-top: 10px;
+}
+
+.project-desc strong {
+  color: var(--white-2);
+  font-weight: var(--fw-500);
 }
 
 .project-tags {
@@ -1954,6 +1962,32 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .project-list, .blog-posts-list { grid-template-columns: 1fr 1fr; }
 
+  /* featured work spans the full row and reads image-beside-copy */
+  .project-item--featured { grid-column: 1 / -1; }
+
+  .project-item--featured > a {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 20px;
+    padding: 16px;
+  }
+
+  .project-item--featured .project-img {
+    flex: 0 0 50%;
+    align-self: center;
+    margin-bottom: 0;
+  }
+
+  /* centre the copy against the image so neither column floats in dead space */
+  .project-item--featured .project-content {
+    justify-content: center;
+    padding-block: 4px;
+  }
+
+  .project-item--featured .project-tags { margin-top: 16px; }
+
+  .project-item--featured .project-title { font-size: var(--fs-3); }
+
 
 
   /**
@@ -2072,7 +2106,8 @@ textarea.form-input::-webkit-resizer { display: none; }
    * PORTFOLIO
    */
 
-  .project-list { grid-template-columns: repeat(3, 1fr); }
+  /* two up rather than three: bigger, more readable project shots */
+  .project-list { grid-template-columns: 1fr 1fr; }
 
 
 
