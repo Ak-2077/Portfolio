@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="GetFit fitness tracking app interface">
+  <defs>
+    <linearGradient id="gf-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2a2a2e"/>
+      <stop offset="1" stop-color="#121214"/>
+    </linearGradient>
+    <linearGradient id="gf-gold" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffb75c"/>
+      <stop offset="1" stop-color="#ffdb70"/>
+    </linearGradient>
+    <linearGradient id="gf-phone" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#232326"/>
+      <stop offset="1" stop-color="#16161a"/>
+    </linearGradient>
+    <linearGradient id="gf-area" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffdb70" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#ffdb70" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="gf-glow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#ffdb70" stop-opacity=".26"/>
+      <stop offset="1" stop-color="#ffdb70" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="gf-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0v40" fill="none" stroke="#ffffff" stroke-opacity=".05" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#gf-bg)"/>
+  <rect width="800" height="500" fill="url(#gf-grid)"/>
+  <circle cx="250" cy="250" r="250" fill="url(#gf-glow)"/>
+
+  <!-- wordmark + dumbbell -->
+  <g>
+    <g stroke="url(#gf-gold)" stroke-width="4" stroke-linecap="round" fill="none">
+      <path d="M40 52h8M64 52h20M100 52h8"/>
+      <path d="M52 38v28M60 42v20M88 42v20M96 38v28"/>
+    </g>
+    <text x="126" y="49" font-family="Poppins, Segoe UI, sans-serif" font-size="25" font-weight="600" fill="#fafafa">GetFit</text>
+    <text x="126" y="70" font-family="Poppins, Segoe UI, sans-serif" font-size="13" font-weight="300" fill="#d6d6d6" opacity=".8">Workout &amp; nutrition tracking, personalised</text>
+  </g>
+
+  <!-- activity rings card -->
+  <g>
+    <rect x="36" y="100" width="240" height="240" rx="20" fill="#1c1c1f" stroke="#3a3a3a"/>
+    <text x="56" y="128" font-family="Poppins, Segoe UI, sans-serif" font-size="12" font-weight="500" fill="#fafafa">Today</text>
+    <g transform="translate(156 226)">
+      <circle r="82" fill="none" stroke="#303033" stroke-width="15"/>
+      <circle r="82" fill="none" stroke="url(#gf-gold)" stroke-width="15" stroke-linecap="round" stroke-dasharray="412 515" transform="rotate(-90)"/>
+      <circle r="61" fill="none" stroke="#303033" stroke-width="15"/>
+      <circle r="61" fill="none" stroke="#7ddba0" stroke-width="15" stroke-linecap="round" stroke-dasharray="268 383" transform="rotate(-90)"/>
+      <circle r="40" fill="none" stroke="#303033" stroke-width="15"/>
+      <circle r="40" fill="none" stroke="#6cb8f0" stroke-width="15" stroke-linecap="round" stroke-dasharray="176 251" transform="rotate(-90)"/>
+      <text y="-2" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="21" font-weight="600" fill="#fafafa">80%</text>
+      <text y="16" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="10" font-weight="300" fill="#a9a9a9">goal</text>
+    </g>
+  </g>
+
+  <!-- weekly volume chart -->
+  <g>
+    <rect x="36" y="356" width="240" height="104" rx="18" fill="#1c1c1f" stroke="#3a3a3a"/>
+    <text x="56" y="382" font-family="Poppins, Segoe UI, sans-serif" font-size="11" font-weight="300" fill="#a9a9a9">WEEKLY VOLUME</text>
+    <g fill="url(#gf-gold)">
+      <rect x="56" y="418" width="16" height="22" rx="5"/>
+      <rect x="82" y="406" width="16" height="34" rx="5"/>
+      <rect x="108" y="412" width="16" height="28" rx="5"/>
+      <rect x="134" y="396" width="16" height="44" rx="5"/>
+      <rect x="160" y="402" width="16" height="38" rx="5"/>
+      <rect x="186" y="390" width="16" height="50" rx="5"/>
+      <rect x="212" y="408" width="16" height="32" rx="5"/>
+    </g>
+  </g>
+
+  <!-- stat pills -->
+  <g font-family="Poppins, Segoe UI, sans-serif">
+    <rect x="296" y="100" width="150" height="86" rx="14" fill="#1c1c1f" stroke="#3a3a3a"/>
+    <text x="314" y="128" font-size="11" font-weight="300" fill="#a9a9a9">CALORIES</text>
+    <text x="314" y="158" font-size="24" font-weight="600" fill="#ffdb70">2,140</text>
+    <text x="392" y="158" font-size="11" fill="#8f8f8f">kcal</text>
+
+    <rect x="296" y="204" width="150" height="86" rx="14" fill="#1c1c1f" stroke="#3a3a3a"/>
+    <text x="314" y="232" font-size="11" font-weight="300" fill="#a9a9a9">STREAK</text>
+    <text x="314" y="262" font-size="24" font-weight="600" fill="#ffdb70">24</text>
+    <text x="352" y="262" font-size="11" fill="#8f8f8f">days</text>
+
+    <rect x="296" y="308" width="150" height="152" rx="14" fill="#1c1c1f" stroke="#3a3a3a"/>
+    <text x="314" y="334" font-size="11" font-weight="300" fill="#a9a9a9">PROGRESS</text>
+    <path d="M314 424 340 408 366 414 392 386 418 392 428 372 428 440 314 440Z" fill="url(#gf-area)"/>
+    <path d="M314 424 340 408 366 414 392 386 418 392 428 372" fill="none" stroke="url(#gf-gold)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- phone mockup -->
+  <g transform="translate(500 84)">
+    <rect x="0" y="0" width="212" height="380" rx="34" fill="url(#gf-phone)" stroke="#3f3f42" stroke-width="2"/>
+    <rect x="10" y="10" width="192" height="360" rx="26" fill="#101012"/>
+    <rect x="78" y="20" width="56" height="8" rx="4" fill="#2c2c30"/>
+
+    <text x="28" y="66" font-family="Poppins, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#fafafa">Push Day</text>
+    <text x="28" y="84" font-family="Poppins, Segoe UI, sans-serif" font-size="10" font-weight="300" fill="#8f8f8f">6 exercises &#183; 48 min</text>
+
+    <g font-family="Poppins, Segoe UI, sans-serif">
+      <rect x="24" y="98" width="164" height="42" rx="12" fill="#1e1e21" stroke="#333336"/>
+      <circle cx="44" cy="119" r="11" fill="#ffdb70" fill-opacity=".16"/>
+      <path d="M39 119l4 4 7-8" stroke="#ffdb70" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="64" y="116" font-size="10.5" fill="#e8e8e8">Bench Press</text>
+      <text x="64" y="130" font-size="9" font-weight="300" fill="#8f8f8f">4 x 8 &#183; 60 kg</text>
+
+      <rect x="24" y="150" width="164" height="42" rx="12" fill="#1e1e21" stroke="#333336"/>
+      <circle cx="44" cy="171" r="11" fill="#ffdb70" fill-opacity=".16"/>
+      <path d="M39 171l4 4 7-8" stroke="#ffdb70" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="64" y="168" font-size="10.5" fill="#e8e8e8">Incline DB Press</text>
+      <text x="64" y="182" font-size="9" font-weight="300" fill="#8f8f8f">3 x 10 &#183; 22 kg</text>
+
+      <rect x="24" y="202" width="164" height="42" rx="12" fill="#1e1e21" stroke="#ffdb70" stroke-opacity=".55"/>
+      <circle cx="44" cy="223" r="11" fill="none" stroke="#ffdb70" stroke-width="2.4"/>
+      <text x="64" y="220" font-size="10.5" fill="#e8e8e8">Cable Fly</text>
+      <text x="64" y="234" font-size="9" font-weight="300" fill="#8f8f8f">3 x 12 &#183; 15 kg</text>
+
+      <rect x="24" y="254" width="164" height="42" rx="12" fill="#1e1e21" stroke="#333336"/>
+      <circle cx="44" cy="275" r="11" fill="none" stroke="#4a4a4e" stroke-width="2.4"/>
+      <text x="64" y="272" font-size="10.5" fill="#9d9d9d">Overhead Press</text>
+      <text x="64" y="286" font-size="9" font-weight="300" fill="#7a7a7a">4 x 8 &#183; 35 kg</text>
+    </g>
+
+    <rect x="24" y="312" width="164" height="36" rx="18" fill="url(#gf-gold)"/>
+    <text x="106" y="335" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="12" font-weight="600" fill="#17171a">Continue workout</text>
+  </g>
+</svg>

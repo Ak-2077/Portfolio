@@ -16,45 +16,6 @@ sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); }
 
 
 
-// testimonials variables
-const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
-const modalContainer = document.querySelector("[data-modal-container]");
-const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
-const overlay = document.querySelector("[data-overlay]");
-
-// modal variable
-const modalImg = document.querySelector("[data-modal-img]");
-const modalTitle = document.querySelector("[data-modal-title]");
-const modalText = document.querySelector("[data-modal-text]");
-
-// modal toggle function
-const testimonialsModalFunc = function () {
-  modalContainer.classList.toggle("active");
-  overlay.classList.toggle("active");
-}
-
-// add click event to all modal items
-for (let i = 0; i < testimonialsItem.length; i++) {
-
-  testimonialsItem[i].addEventListener("click", function () {
-
-    modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
-    modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
-    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
-
-    testimonialsModalFunc();
-
-  });
-
-}
-
-// add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
-
-
-
 // custom select variables
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
@@ -71,8 +32,20 @@ for (let i = 0; i < selectItems.length; i++) {
     selectValue.innerText = this.innerText;
     elementToggleFunc(select);
     filterFunc(selectedValue);
+    syncFilterBtn(selectedValue);
 
   });
+}
+
+// keep the desktop filter buttons in sync with the mobile dropdown
+const syncFilterBtn = function (selectedValue) {
+
+  for (let i = 0; i < filterBtn.length; i++) {
+    const isMatch = filterBtn[i].innerText.toLowerCase() === selectedValue;
+    filterBtn[i].classList.toggle("active", isMatch);
+    if (isMatch) lastClickedBtn = filterBtn[i];
+  }
+
 }
 
 // filter variables
@@ -184,16 +157,19 @@ const pages = document.querySelectorAll("[data-page]");
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
 
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
-      } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
-      }
+    const targetPage = this.textContent.trim().toLowerCase();
+
+    // show only the page matching the clicked link
+    for (let j = 0; j < pages.length; j++) {
+      pages[j].classList.toggle("active", pages[j].dataset.page === targetPage);
     }
+
+    // highlight only the clicked link
+    for (let j = 0; j < navigationLinks.length; j++) {
+      navigationLinks[j].classList.toggle("active", navigationLinks[j] === this);
+    }
+
+    window.scrollTo(0, 0);
 
   });
 }
